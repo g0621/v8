@@ -1,0 +1,33 @@
+<% include ../palets/header %>
+<div class="container">
+<header class="jumbotron">
+    <div class="container">
+        <h1>HERE ALL THE CAMPGROUND</h1>
+        <p>hand-picked from all over the world</p>
+        <p>
+            <a class="btn btn-primary btn-large" href="/campground/new">ADD A NEW CAMPGROUND</a>
+        </p>
+    </div>
+</header>
+    <div class="row text-center">
+        <div class="col-lg-12">
+
+            <h3>most popular sites.</h3>
+            <% camp.forEach(function(c){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                <div class="caption"><li><%= c.name %> - <%= c.year %></li></div>
+                <img src="<%= c.image %>">
+                    <p>
+                        <a style="margin-top: 10px" class="btn btn-primary" href="/campground/<%= c._id %>">More info.</a>
+                    </p>
+                </div>
+            </div>
+            <%})%>
+        </div>
+    </div>
+
+<a href="/">HOMEPAGE</a>
+</div>
+
+<% include ../palets/footer %>
